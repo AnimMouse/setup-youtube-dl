@@ -1,8 +1,9 @@
 name: Test setup-youtube-dl
 on:
   push:
-    branches:
-      - main
+    paths:
+      - "action.yml"
+      - ".github/workflows/test.yml"
       
 jobs:
   test:
