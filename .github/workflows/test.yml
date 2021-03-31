@@ -1,0 +1,15 @@
+name: Test setup-youtube-dl
+on:
+  push:
+    branches:
+      - main
+      
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup youtube-dl using setup-youtube-dl
+        uses: AnimMouse/setup-youtube-dl@main
+        
+      - name: Test youtube-dl installed by setup-youtube-dl
+        run: youtube-dl https://www.youtube.com/watch?v=BaW_jenozKc

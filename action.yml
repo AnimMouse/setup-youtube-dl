@@ -1,0 +1,8 @@
+name: "Setup youtube-dl"
+description: "Setup youtube-dl in GitHub Actions"
+runs:
+  using: "composite"
+  steps:
+    - name: Install youtube-dl using pip3
+      shell: bash
+      run: sudo -H pip3 install youtube-dl
