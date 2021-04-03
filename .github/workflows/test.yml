@@ -7,26 +7,14 @@ on:
       
 jobs:
   test:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-        
-    steps:
-      - name: Setup youtube-dl using setup-youtube-dl
-        uses: AnimMouse/setup-youtube-dl@main
-        
-      - name: Test youtube-dl installed by setup-youtube-dl
-        run: youtube-dl https://www.youtube.com/watch?v=BaW_jenozKc
-        
-  test-with-ffmpeg:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        ffmpeg: [ffmpeg-false, ffmpeg-true]
         
     steps:
       - name: Setup FFmpeg
+        if: ${{ matrix.ffmpeg == 'ffmpeg-true' }}
         uses: FedericoCarboni/setup-ffmpeg@v1
         
       - name: Setup youtube-dl using setup-youtube-dl
