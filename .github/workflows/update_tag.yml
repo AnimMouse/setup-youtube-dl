@@ -1,0 +1,14 @@
+name: Update tag
+on:
+  workflow_dispatch:
+    branches:
+      - main
+      
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update tag
+        uses: EndBug/latest-tag@latest
+         with:
+           tag-name: v1

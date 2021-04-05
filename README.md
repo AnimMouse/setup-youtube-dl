@@ -13,7 +13,7 @@ steps:
   - uses: actions/checkout@v2
     
   - name: Setup youtube-dl
-    uses: AnimMouse/setup-youtube-dl@main
+    uses: AnimMouse/setup-youtube-dl@v1
     
   - run: youtube-dl https://www.youtube.com/watch?v=BaW_jenozKc
 ```
@@ -29,7 +29,7 @@ steps:
     uses: FedericoCarboni/setup-ffmpeg@v1
     
   - name: Setup youtube-dl
-    uses: AnimMouse/setup-youtube-dl@main
+    uses: AnimMouse/setup-youtube-dl@v1
     
   - run: youtube-dl https://www.youtube.com/watch?v=BaW_jenozKc
 ```
