@@ -1,8 +1,9 @@
 name: "Setup youtube-dl"
-description: "Setup youtube-dl in GitHub Actions"
+description: "Setup/Install youtube-dl for GitHub Actions"
 branding:
   icon: "play-circle"
   color: "red"
+  
 runs:
   using: "composite"
   steps:

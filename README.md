@@ -3,7 +3,7 @@ Setup [youtube-dl](https://github.com/ytdl-org/youtube-dl) on GitHub Actions to 
 
 This action installs [youtube-dl](https://github.com/ytdl-org/youtube-dl) for use in actions by installing it using pip3.
 
-This action only support `ubuntu-latest` as [conditionals](https://github.com/actions/runner/issues/646) does not work on [composite](https://docs.github.com/en/actions/creating-actions/creating-a-composite-run-steps-action) yet.
+This action only works on Ubuntu virtual environments as [conditionals](https://github.com/actions/runner/issues/646) does not work on [composite](https://docs.github.com/en/actions/creating-actions/creating-a-composite-run-steps-action) yet.
 
 ## Usage
 To use `youtube-dl`, run this action before `youtube-dl`.
@@ -19,7 +19,7 @@ steps:
 ```
 
 ## FFmpeg
-To improve youtube-dl, install FFmpeg first by using [FedericoCarboni/setup-ffmpeg](https://github.com/FedericoCarboni/setup-ffmpeg)
+To improve youtube-dl's handling of formats, it is recommended to install FFmpeg first by using [FedericoCarboni/setup-ffmpeg](https://github.com/FedericoCarboni/setup-ffmpeg).
 
 ```yml
 steps:
