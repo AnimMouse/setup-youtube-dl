@@ -1,12 +1,12 @@
-name: "Setup youtube-dl"
-description: "Setup/Install youtube-dl for GitHub Actions"
+name: Setup youtube-dl
+description: Setup/Install youtube-dl for GitHub Actions
 branding:
-  icon: "play-circle"
-  color: "red"
+  icon: play-circle
+  color: red
   
 runs:
-  using: "composite"
+  using: composite
   steps:
-    - name: Install youtube-dl using pip3
+    - name: Install youtube-dl using pipx
       shell: bash
-      run: sudo -H pip3 install youtube-dl
+      run: pipx install youtube-dl
