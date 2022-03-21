@@ -5,13 +5,13 @@ This action installs [youtube-dl](https://github.com/ytdl-org/youtube-dl) for us
 
 This action only works on Ubuntu virtual environments as [conditionals](https://github.com/actions/runner/issues/646) does not work on [composite](https://docs.github.com/en/actions/creating-actions/creating-a-composite-run-steps-action) yet.
 
-# Update!
-Please use [setup-yt-dlp](https://github.com/AnimMouse/setup-yt-dlp) instead. This action will be deprecated until youtube-dl are updated.
+## Deprecation
+This action is deprecated, please use [AnimMouse/setup-yt-dlp](https://github.com/AnimMouse/setup-yt-dlp) instead.
 
 ## Usage
 To use `youtube-dl`, run this action before `youtube-dl`.
 
-```yml
+```yaml
 steps:
   - uses: actions/checkout@v2
     
@@ -24,7 +24,7 @@ steps:
 ## FFmpeg
 To improve youtube-dl's handling of formats, it is recommended to install FFmpeg first by using [FedericoCarboni/setup-ffmpeg](https://github.com/FedericoCarboni/setup-ffmpeg).
 
-```yml
+```yaml
 steps:
   - uses: actions/checkout@v2
     
