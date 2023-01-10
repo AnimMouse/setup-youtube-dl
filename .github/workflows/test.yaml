@@ -2,26 +2,28 @@ name: Test setup-youtube-dl
 on:
   push:
     paths:
-      - action.yaml
+      - action.yml
+      - scripts/**
       - .github/workflows/test.yaml
       
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
-        ffmpeg: [without-ffmpeg, with-ffmpeg]
+        os: [ubuntu-latest, windows-latest, macos-latest]
         
     steps:
-      - name: Setup FFmpeg
-        if: ${{ matrix.ffmpeg == 'with-ffmpeg' }}
-        uses: FedericoCarboni/setup-ffmpeg@v1
-        
       - name: Setup youtube-dl using setup-youtube-dl
         uses: AnimMouse/setup-youtube-dl@main
         
-      - name: Test youtube-dl installed by setup-youtube-dl
-        run: youtube-dl https://www.youtube.com/watch?v=BaW_jenozKc
+      - name: Test youtube-dl
+        run: youtube-dl -P youtube-dl-test-video https://www.youtube.com/watch?v=BaW_jenozKc
         
-      - name: List files
-        run: ls
+      - name: Upload youtube-dl test video
+        uses: actions/upload-artifact@v3
+        with:
+          name: youtube-dl on ${{ runner.os }} test video
+          path: youtube-dl-test-video
+          if-no-files-found: error
