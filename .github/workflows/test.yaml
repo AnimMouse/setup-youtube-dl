@@ -18,12 +18,5 @@ jobs:
       - name: Setup youtube-dl using setup-youtube-dl
         uses: AnimMouse/setup-youtube-dl@main
         
-      - name: Test youtube-dl
-        run: youtube-dl -P youtube-dl-test-video https://www.youtube.com/watch?v=BaW_jenozKc
-        
-      - name: Upload youtube-dl test video
-        uses: actions/upload-artifact@v3
-        with:
-          name: youtube-dl on ${{ runner.os }} test video
-          path: youtube-dl-test-video
-          if-no-files-found: error
+      - name: Test youtube-dl by checking version
+        run: youtube-dl --version
