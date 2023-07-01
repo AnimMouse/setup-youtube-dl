@@ -20,12 +20,12 @@ steps:
 ```
 
 ## FFmpeg
-To improve youtube-dl's handling of formats like merging `bestvideo+bestaudio` instead of just using `best`, it is recommended to install FFmpeg first by using [FedericoCarboni/setup-ffmpeg](https://github.com/FedericoCarboni/setup-ffmpeg).
+To improve youtube-dl's handling of formats like merging `bestvideo+bestaudio` instead of just using `best`, it is recommended to install FFmpeg first by using [AnimMouse/setup-ffmpeg](https://github.com/AnimMouse/setup-ffmpeg).
 
 ```yaml
 steps:
   - name: Setup FFmpeg
-    uses: FedericoCarboni/setup-ffmpeg@v1
+    uses: AnimMouse/setup-ffmpeg@v1
     
   - name: Setup youtube-dl
     uses: AnimMouse/setup-youtube-dl@v1
@@ -34,7 +34,7 @@ steps:
 ```
 
 ### Specific version
-You can specify the version you want. By default, this action downloads the latest version.
+You can specify the version you want. By default, this action downloads the latest version if version is not specified.
 
 ```yaml
 steps:
